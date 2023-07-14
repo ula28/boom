@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// пишем программу, в которой пользователь будет отвечать на вопросы и в зависимости от количества правильных ответов  ему выведется определенное сообщение о пройденном тесте
+	
+// подготовка данных, инициализация данных
+	const word0 = 'Wassap';
+	const word0translation = 'здарова';
+
+	const word1 = 'Bay';
+	const word1translation = 'покеда';
+
+	const word2 = 'Programmer';
+   const word2translation = 'программист';
+	// всего слов
+	const wordCount = 3;
+
+	let correctMinPercent = 50;
+
+	const finishSuccesMessage = 'молодец! Good result';
+	const finishUnsuccesMessage = 'молодец! Но, старайся лучше';
+
+	// количество правильных ответов
+	let correctAnswersCount = 0;
+//========================================================================================================================================================
+// сама программа, которая обрабатывает данные
+// сщздадим переменую, куда запишется ответ от пользователя,с пмощью prompt(здесь английское слово, сюда же пользователь пиханет перевод)
+	const userAnswer0 = prompt(word0);  
+	// вывод булевого значения пользователю, вз ависимости от ответа
+	alert(userAnswer0 === word0translation);
+	// если ответ пользователя равен правильному переводу этого слова()
+	if(userAnswer0 === word0translation){
+		// то увеличиваем количество правильных ответов нв 1
+		correctAnswersCount = correctAnswersCount + 1;
+	}
+
+	const userAnswer1 = prompt(word1);
+	alert(userAnswer1 === word0translation);
+	if(userAnswer1 === word1translation){
+		correctAnswersCount = correctAnswersCount + 1;
+	}
+
+	const userAnswer2 = prompt(word2);
+	alert(userAnswer2 === word2translation);
+	if(userAnswer2 === word2translation){
+		correctAnswersCount = correctAnswersCount + 1;
+	}
+	// эта переменная формируется в процессе работы программы, поэтому назначаем ее тут
+	const userCorrectAnswersPercent = correctAnswersCount / wordCount * 100 ;
+	// в зависимости от процентов правильных ответов будем выводить определеные финишные сообщения для пользователя
+	// колво правильных ответов разделить на колво слов*100-получим проценты
+	if(userCorrectAnswersPercent > correctMinPercent){
+		alert(finishSuccesMessage);
+
+	} else {
+		alert(finishUnsuccesMessage);
+	}
+</script>
